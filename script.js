@@ -149,7 +149,7 @@ function resetSrc () {
       item.removeAttribute("src");
       message.innerText = '';
     }
-  }, 1500);
+  }, 3000);
 }
 
 function reShuffle (url) {
