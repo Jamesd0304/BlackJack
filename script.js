@@ -56,9 +56,12 @@ hit.addEventListener('click', function () {
   newHit("https://cors-anywhere.herokuapp.com/https://deckofcardsapi.com/api/deck/4zakt0un65c4/draw/?count=1");
 });
 stay.addEventListener('click', function () {
-  if (dealerHandVal <=14) {
+  if(dealerHandVal <= 14) {
   dealerStay("https://cors-anywhere.herokuapp.com/https://deckofcardsapi.com/api/deck/4zakt0un65c4/draw/?count=1");
-  }
+ }
+ else {
+   stayEval();
+ }
 });
 // double.addEventListener();
 // split.addEventListener();
@@ -219,7 +222,14 @@ function dealerStay (url) {
         dealerHandTot.innerText = dealerHandVal;
         // cardNum ++;
         console.log(cardNum);
-        if(dealerHandVal > 21 || dealerHandVal <= playerHandVal) {
+        if(dealerHandVal > 21) {
+          chipCount.innerText = (currentBet * 2) + chipTotal;
+          chipTotal = chipCount.innerText;
+          console.log('YOU WIN');
+          message.innerText = 'YOU WIN!'
+          resetHand();
+        }
+        else if(dealerHandVal >= 14 && dealerHandVal <= playerHandVal){
           chipCount.innerText = (currentBet * 2) + chipTotal;
           chipTotal = chipCount.innerText;
           console.log('YOU WIN');
@@ -322,3 +332,28 @@ function busted () {
 // dealNew("https://cors-anywhere.herokuapp.com/https://deckofcardsapi.com/api/deck/4zakt0un65c4/draw/?count=4");
 // newHit("https://cors-anywhere.herokuapp.com/https://deckofcardsapi.com/api/deck/4zakt0un65c4/draw/?count=1");
 // reShuffle("https://deckofcardsapi.com/api/deck/4zakt0un65c4/shuffle/");
+
+
+function stayEval () {
+  if(dealerHandVal > 21) {
+    chipCount.innerText = (currentBet * 2) + chipTotal;
+    chipTotal = chipCount.innerText;
+    console.log('YOU WIN');
+    message.innerText = 'YOU WIN!'
+    resetHand();
+  }
+  else if(dealerHandVal >= 14 && dealerHandVal <= playerHandVal){
+    chipCount.innerText = (currentBet * 2) + chipTotal;
+    chipTotal = chipCount.innerText;
+    console.log('YOU WIN');
+    message.innerText = 'YOU WIN!'
+    resetHand();
+  }
+  else if(dealerHandVal <= 21 && playerHandVal < dealerHandVal) {
+    chipCount.innerText =  chipTotal - currentBet;
+    chipTotal = chipCount.innerText;
+    console.log('SORRY YOU LOST THE HAND');
+    message.innerText = 'YOU LOST!'
+    resetHand();
+  }
+}
