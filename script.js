@@ -222,27 +222,28 @@ function dealerStay (url) {
         dealerHandTot.innerText = dealerHandVal;
         // cardNum ++;
         console.log(cardNum);
-        if(dealerHandVal > 21) {
-          chipCount.innerText = (currentBet * 2) + chipTotal;
-          chipTotal = chipCount.innerText;
-          console.log('YOU WIN');
-          message.innerText = 'YOU WIN!'
-          resetHand();
-        }
-        else if(dealerHandVal >= 14 && dealerHandVal <= playerHandVal){
-          chipCount.innerText = (currentBet * 2) + chipTotal;
-          chipTotal = chipCount.innerText;
-          console.log('YOU WIN');
-          message.innerText = 'YOU WIN!'
-          resetHand();
-        }
-        else if(dealerHandVal <= 21 && playerHandVal < dealerHandVal) {
-          chipCount.innerText =  chipTotal - currentBet;
-          chipTotal = chipCount.innerText;
-          console.log('SORRY YOU LOST THE HAND');
-          message.innerText = 'YOU LOST!'
-          resetHand();
-        }
+        stayEval();
+        // if(dealerHandVal > 21) {
+        //   chipCount.innerText = (currentBet * 2) + chipTotal;
+        //   chipTotal = chipCount.innerText;
+        //   console.log('YOU WIN');
+        //   message.innerText = 'YOU WIN!'
+        //   resetHand();
+        // }
+        // else if(dealerHandVal <= playerHandVal){
+        //   chipCount.innerText = (currentBet * 2) + chipTotal;
+        //   chipTotal = chipCount.innerText;
+        //   console.log('YOU WIN');
+        //   message.innerText = 'YOU WIN!'
+        //   resetHand();
+        // }
+        // else if(playerHandVal < dealerHandVal) {
+        //   chipCount.innerText =  chipTotal - currentBet;
+        //   chipTotal = chipCount.innerText;
+        //   console.log('SORRY YOU LOST THE HAND');
+        //   message.innerText = 'YOU LOST!'
+        //   resetHand();
+        // }
       }
     };
     req.open("GET", url);
@@ -342,14 +343,14 @@ function stayEval () {
     message.innerText = 'YOU WIN!'
     resetHand();
   }
-  else if(dealerHandVal >= 14 && dealerHandVal <= playerHandVal){
+  else if(dealerHandVal <= playerHandVal){
     chipCount.innerText = (currentBet * 2) + chipTotal;
     chipTotal = chipCount.innerText;
     console.log('YOU WIN');
     message.innerText = 'YOU WIN!'
     resetHand();
   }
-  else if(dealerHandVal <= 21 && playerHandVal < dealerHandVal) {
+  else if(playerHandVal < dealerHandVal) {
     chipCount.innerText =  chipTotal - currentBet;
     chipTotal = chipCount.innerText;
     console.log('SORRY YOU LOST THE HAND');
