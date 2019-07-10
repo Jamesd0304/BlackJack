@@ -37,13 +37,18 @@ let playerHandVal = 0;
 let dealerHandVal = 0;
 // let dealerTotal = 0;
 let cardVal = 0;
+deal.disabled = true;
+hit.disabled = true;
+stay.disabled = true;
 //PRESET VALUES//
 
 let chipTotal = 0;
 currentBt.value = 0;
+currentBt.innerText = 0;
 let currentBet = 0;
 // let currentBet = 0;
 // List of addEventListener //
+
 color.addEventListener('change', create);
 name.addEventListener('change', newUser);
 minbet.addEventListener('click', betMin);
@@ -51,9 +56,14 @@ maxBet.addEventListener('click', betMax);
 betfive.addEventListener('click', betFive);
 deal.addEventListener('click', function () {
   dealNew("https://cors-anywhere.herokuapp.com/https://deckofcardsapi.com/api/deck/4zakt0un65c4/draw/?count=4");
+  minbet.disabled = true;
+  betfive.disabled = true;
+  maxBet.disabled = true;
+
 });
 hit.addEventListener('click', function () {
   newHit("https://cors-anywhere.herokuapp.com/https://deckofcardsapi.com/api/deck/4zakt0un65c4/draw/?count=1");
+
 });
 stay.addEventListener('click', function () {
   if(dealerHandVal <= 14) {
@@ -89,6 +99,12 @@ else {
   name.value = "Hello Player 1"
   user.innerText = name.value;
 }
+// if(currenBt == 0) {
+//   deal.disabled = true;
+// }
+// else{
+//   deal.disabled = false;
+// }
 // Web Storage Values
 // chipCount.innerText = sessionStorage.getItem("chip Count");
 // chipTotal = sessionStorage.getItem("chip Count");
@@ -101,6 +117,7 @@ else {
 // List of Functions //
 function betMin () {
   if(Number(currentBt.innerText) <= 18) {
+    deal.disabled = false;
     currentBet += 2;
     currentBt.innerText = currentBet;
     chipTotal -= 2;
@@ -111,6 +128,7 @@ function betMin () {
 
 function betFive () {
   if(Number(currentBt.innerText) <= 15) {
+    deal.disabled = false;
     currentBet += 5;
     currentBt.innerText = currentBet;
     chipTotal -= 5;
@@ -121,6 +139,7 @@ function betFive () {
 
 function betMax () {
   if(Number(currentBt.innerText) == 0) {
+    deal.disabled = false;
     currentBet += 20;
     currentBt.innerText = currentBet;
     chipTotal -= 20;
@@ -281,6 +300,8 @@ function dealNew (url) {
       playerHandVal = Number(playerCard1.getAttribute("cardval")) + Number(playerCard2.getAttribute("cardval"));
       playerHandTot.innerText = playerHandVal;
       dealerHandTot.innerText = dealerHandVal;
+      hit.disabled = false;
+      stay.disabled = false;
       if(dealerHandVal <= 20  && playerHandVal == 21) {
         chipCount.innerText = (currentBet * 3) + chipTotal;
         chipTotal = chipCount.innerText;
@@ -317,6 +338,12 @@ function resetHand() {
   playerHandTot.innerText = playerHandVal;
   dealerHandVal = 0;
   dealerHandTot.innerText = dealerHandVal;
+  minbet.disabled = false;
+  betfive.disabled = false;
+  maxBet.disabled = false;
+  deal.disabled = true;
+  hit.disabled = true;
+  stay.disabled = true;
   chipStorage();
   resetSrc();
 }
