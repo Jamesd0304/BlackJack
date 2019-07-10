@@ -142,7 +142,8 @@ function chipStorage () {
 function resetSrc () {
   setTimeout(function () {
     for(let item of cardReset) {
-      item.src = "";
+      // item.src = "";
+      item.removeAttribute("src");
       message.innerText = '';
     }
   }, 1500);
@@ -165,6 +166,7 @@ function newHit (url) {
   req.onreadystatechange = function () {
     if(this.readyState == 4 && this.status == 200) {
     let data = JSON.parse(this.response);
+    console.log(playerCard3.src);
     if(playerCard3.src == "") {
       playerCard3.src = data.cards[0].image;
       playerCard3.setAttribute("cardval", valuator(data.cards[0].value));
