@@ -38,7 +38,8 @@ let dealerHandVal = 0;
 // let dealerTotal = 0;
 let cardVal = 0;
 //PRESET VALUES//
-let chipTotal = 200;
+
+let chipTotal = 0;
 currentBt.value = 0;
 let currentBet = 0;
 // let currentBet = 0;
@@ -62,15 +63,37 @@ stay.addEventListener('click', function () {
 // double.addEventListener();
 // split.addEventListener();
 // start.addEventListener('click', newGame);
-
+if(sessionStorage.getItem("chip Count") != undefined) {
+  chipCount.innerText = sessionStorage.getItem("chip Count");
+  chipTotal = sessionStorage.getItem("chip Count");
+}
+else {
+  chipTotal = 200;
+}
+if(sessionStorage.getItem("color") != undefined) {
+  body.style.backgroundColor = sessionStorage.getItem("color");
+  color.value = sessionStorage.getItem("color");
+}
+else {
+  body.style.backgroundColor = "white";
+  color.value = '#ffffff';
+}
+if(sessionStorage.getItem("name") != undefined) {
+  name.value = sessionStorage.getItem("name");
+  user.innerText = name.value;
+}
+else {
+  name.value = "Hello Player 1"
+  user.innerText = name.value;
+}
 // Web Storage Values
-chipCount.innerText = sessionStorage.getItem("chip Count");
-chipTotal = sessionStorage.getItem("chip Count");
-body.style.backgroundColor = sessionStorage.getItem("color");
-color.value = sessionStorage.getItem("color");
-name.value = sessionStorage.getItem("name");
-
-user.innerText = name.value;
+// chipCount.innerText = sessionStorage.getItem("chip Count");
+// chipTotal = sessionStorage.getItem("chip Count");
+// body.style.backgroundColor = sessionStorage.getItem("color");
+// color.value = sessionStorage.getItem("color");
+// name.value = sessionStorage.getItem("name");
+//
+// user.innerText = name.value;
 
 // List of Functions //
 function betMin () {
