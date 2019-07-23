@@ -1,4 +1,4 @@
-'use strict'
+"use strict";
 console.log("test");
 // List of Variables //
 let color = document.getElementById("color");
@@ -96,7 +96,7 @@ if(sessionStorage.getItem("name") != undefined) {
   user.innerText = name.value;
 }
 else {
-  name.value = "Hello Player 1"
+  name.value = "player"
   user.innerText = name.value;
 }
 // if(currenBt == 0) {

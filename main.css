@@ -10,31 +10,37 @@ body {
 header {
   border: solid 1px #000000;
   width: 100%;
-  background-color: #338c26;
-  margin-bottom: 1.2em;
+  background-color: #ffffff;
+  margin-bottom: .5em;
+}
+.wrap {
+  width: 80%;
+  margin: auto;
 }
 h1 {
   text-align: center;
-  padding: 1em;
+  padding: .2em;
 }
 h2 {
   text-align: center;
-  padding-bottom: 1em;
+  padding-bottom: .2em;
 }
 h3 {
   text-align: center;
 }
-.color {
+.info{
   text-align: center;
-  font-size: 1.4em;
-  /* margin-top: 1em; */
-  padding: 1em;
+  font-size: 1.1em;
+  padding: .5em;
+  height: 50px;
 }
-.user {
-  font-size: 1.3em;
-  text-align: center;
-  padding: 1em;
+#name {
+  width: 80px;
 }
+#color {
+  width: 20px;
+}
+
 .start {
   text-align: center;
   margin: 1em auto;
@@ -48,14 +54,37 @@ h3 {
   cursor: pointer;
   background-color: #338c26;
 }
+ul {
+  /* display: inline; */
+  text-align: left;
+}
+li {
+  list-style-type: none;
+}
+.cb-align{
+  text-align: center;
+  margin-left: .5em;
+}
+.bet-deal {
+  margin-left: 0;
+  text-align: center;
+  display: flex;
+}
+.btns {
+  flex: 1;
+}
+img {
+  height: 200px;
+  width: 170px;
+}
 .row{
   display: flex;
-  border: solid 1px #000000;
-  min-height: 150px;
+  /* border: solid 1px #000000; */
+  /* min-height: 180px; */
 }
 .col {
-  margin: 5px;
-  border: solid 1px #000000;
+  margin: -10px;
+  /* border: solid 1px #000000; */
 }
 .col-1{
   flex: 1;
@@ -93,58 +122,62 @@ h3 {
 .col-12{
   flex: 12;
 }
-.message-row{
+.dealer-row {
+  margin: 1em 0;
+  min-height: 275px;
+  /* border: solid; */
+}
+.player-row {
+  margin: 1em 0;
+  min-height: 275px;
+  /* border: solid; */
+}
+#message-row{
   display: flex;
   border: solid 1px #000000;
-  min-height: 150px;
-  max-width: 80%;
+  /* min-height: 150px; */
+  max-width: 60%;
   margin: auto;
   text-align: center;
 }
 #bet-min {
-  margin:5px;
+  margin: 0 5px 5px 5px;
 }
 #bet-5 {
-  margin:5px;
+  margin: 0 5px 5px 5px;
 }
 #bet-max {
-  margin:5px;
+  margin: 0 5px 5px 5px;
 }
 #deal {
   margin: 5px;
   font-size: 20px;
 }
 #hit {
-  margin:5px;
+  margin: 5px;
   font-size: 20px;
 }
 #stay {
-  margin:5px;
+  margin: 5px;
   font-size: 20px;
 }
 #bet-min:hover {
-  margin:5px;
   background-color: green;
   cursor: pointer;
 }
 #bet-5:hover {
-  margin:5px;
   background-color: green;
   cursor: pointer;
 }
 #bet-max:hover {
-  margin:5px;
   background-color: green;
   cursor: pointer;
 }
 #deal:hover {
-  margin: 5px;
-  font-size: 20px;
   background-color: green;
   cursor: pointer;
 }
 #hit:hover {
-  margin:5px;
   background-color: green;
   cursor: pointer;
 }
@@ -152,4 +185,71 @@ h3 {
   margin:5px;
   background-color: green;
   cursor: pointer;
+}
+.card {
+
+  /* width: 80px; */
+}
+footer {
+  border-top: solid 1px #000000;
+  height: 50px;
+}
+.totalchips {
+  margin-top: 3em;
+}
+
+@media (max-width: 600px) {
+  .dealer-row {
+    margin: 1em 0;
+    min-height: 175px;
+    /* border: solid; */
+  }
+  .player-row {
+    margin: 1em 0;
+    min-height: 175px;
+    /* border: solid; */
+  }
+  #message {
+    text-align: center;
+    font-size: 2em;
+  }
+  .row {
+    height: 130px;
+}
+  img {
+    max-height: 110px;
+    max-width: 72px;
+  }
+}
+  #bet-min {
+  margin: 0 2px 2px 2px;
+}
+  #bet-5 {
+  margin: 0 2px 2px 2px;
+}
+  #bet-max {
+  margin: 0 2px 2px 2px;
+}
+  #deal {
+  margin: 0 2px 2px 2px;
+  font-size: 15px;
+}
+  #deal:hover {
+
+}
+  #hit {
+  margin:2px;
+  font-size: 15px;
+}
+  #stay {
+  margin:2px;
+  font-size: 15px;
+}
+  .btns {
+    text-align: left;
+    margin: 0.6em;
+  }
+  .totalchips {
+    margin-top: 2em;
+  }
 }

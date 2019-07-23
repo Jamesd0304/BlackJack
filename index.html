@@ -9,58 +9,59 @@
   <body id="body">
     <header>
       <h1>Welcome to Blackjack</h1>
-      <h2>the Game</h2>
-      <h3 id="user"></h3>
+      <!-- <h3 class="user" id="user">player</h3> -->
     </header>
-    <div class="color">Choose Background color: <input class="" id="color" type="color" name="" >
-    </div>
-    <div class="user">  Name: <input id="name" type="text" name="" value="">
-    </div>
-    <div class="start" id="new-game">
-      <!-- <button id="start" type="button" name="button">Start New Game</button> -->
-      <div  class="message-row">
+    <div class='wrap'>
         <h2 id="message"></h2>
-      </div>
+      <div class="dealer-row row">
+        <div class='card col col-4'>
+          <h3>Dealer</h3>
+          <h3 id="dealer-hand-total">0</h3></div>
+        <div class="card col col-2"><img class="reset-src"  id="dealer-card-1" src="" alt=""></div>
+        <div class="card col col-2"><img class="reset-src"  id="dealer-card-2" src="" alt=""></div>
+        <div class="card col col-2"><img class="reset-src"  id="dealer-card-3" src="" alt=""></div>
+        <div class="card col col-2"><img class="reset-src"  id="dealer-card-4" src="" alt=""></div>
+        <div class="card col col-2"><img class="reset-src"  id="dealer-card-5" src="" alt=""></div>
+        <div class="card col col-2"><img class="reset-src"  id="dealer-card-6" src=""  alt=""></div>
     </div>
-    <div class="row">
-    <div class="col col-4"><button id="bet-min" type="button" name="button">BET Min(2)</button>
-        <button id="bet-5" type="button" name="button">BET 5</button>
-        <button id="bet-max" type="button" name="button">BET MAX(20)</button>
-        <button id="deal" type="button" name="button">DEAL</button>
-        <h2>Current Bet:</h2>
-        <h3 id="current-bet">0</h3>
-      </div>
-        <div class="col col-2"><img class="reset-src"  id="dealer-card-1" src="" alt=""></div>
-        <div class="col col-2"><img class="reset-src"  id="dealer-card-2" src="" alt=""></div>
-        <div class="col col-2"><img class="reset-src"  id="dealer-card-3"  alt=""></div>
-        <div class="col col-2"><img class="reset-src"  id="dealer-card-4"  alt=""></div>
-        <div class="col col-2"><img class="reset-src"  id="dealer-card-5"  alt=""></div>
-        <div class="col col-2"><img class="reset-src"  id="dealer-card-6"  alt=""></div>
-        <div class="col col-4">
-          <h3>Dealer Hand Total:</h3>
-          <h3 id="dealer-hand-total">0</h3>
-        </div>
-    </div>
-    <div class="row">
-      <!-- <div class="row"></div> -->
-      <div class="col col-4"><button id="hit" type="button" name="button">HIT</button>
-        <!-- <button id="double" type="button" name="button">DOUBLE</button>
-        <button id="split" type="button" name="button">SPLIT</button> -->
-        <button id="stay" type="button" name="button">STAY</button>
-        <h2>Total Chip Count:</h2>
-          <h3 id="chip-count">200</h3>
-       </div>
-      <div class="col col-2"><img class="reset-src" id="player-card-1" src="" alt="" ></div>
-      <div class="col col-2"><img class="reset-src" id="player-card-2" src="" alt=""></div>
-      <div class="col col-2"><img class="reset-src" id="player-card-3" alt=""></div>
-      <div class="col col-2"><img class="reset-src" id="player-card-4" alt=""></div>
-      <div class="col col-2"><img class="reset-src" id="player-card-5" alt=""></div>
-      <div class="col col-2"><img class="reset-src" id="player-card-6" alt=""></div>
+    <div class="player-row row">
       <div class="col col-4">
-        <h3>Player Hand Total:</h3>
+        <h3 id="user"></h3>
         <h3 id="player-hand-total">0</h3>
        </div>
+      <div class="card col col-2"><img class="reset-src" id="player-card-1" src="" alt="" ></div>
+      <div class="card col col-2"><img class="reset-src" id="player-card-2" src="" alt=""></div>
+      <div class="card col col-2"><img class="reset-src" id="player-card-3" src="" alt=""></div>
+      <div class="card col col-2"><img class="reset-src" id="player-card-4" src="" alt=""></div>
+
+      <div class="card col col-2"><img class="reset-src" id="player-card-5" src="" alt=""></div>
+      <div class="card col col-2"><img class="reset-src" id="player-card-6" src="" alt=""></div>
     </div>
-    <script  src="script.js"></script>
+    <div class="bet-deal">
+      <div class='btns'>
+        <button id="bet-min" type="button" name="button">BET Min(2)</button><br>
+        <button id="bet-5" type="button" name="button">BET 5</button><br>
+        <button id="bet-max" type="button" name="button">BET MAX(20)</button><br>
+        <button id="deal" type="button" name="button">DEAL</button>
+      <h2 class='cb-align'>Current Bet:</h2>
+      <h3 class='cb-align' id="current-bet">0</h3>
+    </div>
+    <div class='btns'></div>
+    <div class='btns'></div>
+    <div class='btns'>
+      <button id="hit" type="button" name="button">HIT</button>
+      <button id="stay" type="button" name="button">STAY</button>
+      <h2 class='totalchips'>Total Chip Count:</h2>
+        <h3 id="chip-count">200</h3>
+     </div>
+     <div class='btns'></div>
+   </div>
+ </div>
+   <footer class="info">
+     <div>Color: <input class="" id="color" type="color" name="" >
+   Name: <input id="name" type="text" name="" value="">
+ </div>
+ </footer>
+    <script  src="bj_script.js"></script>
   </body>
 </html>
